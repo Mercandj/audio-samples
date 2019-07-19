@@ -5,5 +5,6 @@ The original "full resolution" flac file this coming from [Sony](https://helpgui
 ## How to use it
 
 - Install FFmpeg on your computer
-- Run in terminal `create_files.sh`
-- Use all the files are listed in `generated_content_description.json`
+- Copy `./create_audio_files.sh` in your project
+- Run in terminal `./create_audio_files.sh`
+- Output files are listed in `./generated_content_description.json`

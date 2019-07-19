@@ -1,5 +1,9 @@
 
+.DS_Store
 *.ogg
 *.m4a
 *.mp3
 *.wav
+
+./build
+build
