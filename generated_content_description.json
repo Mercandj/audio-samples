@@ -7,15 +7,15 @@
       "format_extension": "mp3",
       "display_name": "MP3 - Sample BeeMoved - 48kHz"
     },
-    "sample_bee_moved_96_khz_24_bit.flac": {
-      "file_name": "sample_bee_moved_96_khz_24_bit.flac",
-      "file_local_path": "./sample_bee_moved_96_khz_24_bit.flac",
+    "sample_bee_moved_96_khz.flac": {
+      "file_name": "sample_bee_moved_96_khz.flac",
+      "file_local_path": "./sample_bee_moved_96_khz.flac",
       "format_extension": "flac",
       "display_name": "FLAC - Sample BeeMoved - 96kHz / 24bit"
     },
-    "sample_bee_moved_96_khz_24_bit.wav": {
-      "file_name": "sample_bee_moved_96_khz_24_bit.wav",
-      "file_local_path": "./build/sample_bee_moved_96_khz_24_bit.wav",
+    "sample_bee_moved_96_khz.wav": {
+      "file_name": "sample_bee_moved_96_khz.wav",
+      "file_local_path": "./build/sample_bee_moved_96_khz.wav",
       "format_extension": "wav",
       "display_name": "WAV - Sample BeeMoved - 96kHz / 24bit"
     },

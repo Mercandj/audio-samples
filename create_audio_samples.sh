@@ -23,14 +23,14 @@ pushd "$BASEDIR"
 
         mkdir ./build
 
-        ffmpeg -i ./sample_bee_moved_96_khz_24_bit.flac ./build/sample_bee_moved_96_khz_24_bit.wav
+        ffmpeg -i ./sample_bee_moved_96_khz.flac ./build/sample_bee_moved_96_khz.wav
 
         # https://github.com/Mercandj/audio-samples/issues/1
-        ffmpeg -i ./sample_bee_moved_96_khz_24_bit.flac -c:a libmp3lame -ar 44100 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_48_khz.mp3
+        ffmpeg -i ./sample_bee_moved_96_khz.flac -c:a libmp3lame -ar 44100 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_48_khz.mp3
 
-        ffmpeg -i ./build/sample_bee_moved_96_khz_24_bit.wav -codec:a aac ./build/sample_bee_moved_aac.m4a
+        ffmpeg -i ./build/sample_bee_moved_96_khz.wav -codec:a aac ./build/sample_bee_moved_aac.m4a
 
-        ffmpeg -i ./build/sample_bee_moved_96_khz_24_bit.wav -acodec libvorbis ./build/sample_bee_moved_vorbis.ogg
+        ffmpeg -i ./build/sample_bee_moved_96_khz.wav -acodec libvorbis ./build/sample_bee_moved_vorbis.ogg
 
     popd
 
