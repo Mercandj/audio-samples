@@ -4,41 +4,24 @@ BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 pushd "$BASEDIR"
 
-    if [ -d "$BASEDIR/build/audio-samples" ]; then
-        printf "Pull audio-samples GitHub project"
-        pushd "$BASEDIR/build/audio-samples"
-            git pull
-        popd
-    else
-        printf "Clone audio-samples GitHub project"
-        mkdir -p build
-        pushd build
-            git clone https://github.com/Mercandj/audio-samples.git
-        popd
-    fi
+    bash ./clean_files.sh
 
-    pushd ./build/audio-samples
+    mkdir ./build
 
-        bash ./clean_files.sh
+    # https://github.com/Mercandj/audio-samples/issues/2
+    ffmpeg -i ./sample_bee_moved_96_khz.flac -acodec pcm_s16le ./build/sample_bee_moved_96_khz.wav
 
-        mkdir ./build
+    # https://github.com/Mercandj/audio-samples/issues/1
+    ffmpeg -i ./sample_bee_moved_96_khz.flac -c:a libmp3lame -ar 44100 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_44100_khz.mp3
 
-        # https://github.com/Mercandj/audio-samples/issues/2
-        ffmpeg -i ./sample_bee_moved_96_khz.flac -acodec pcm_s16le ./build/sample_bee_moved_96_khz.wav
+    # https://github.com/Mercandj/audio-samples/issues/1
+    ffmpeg -i ./sample_bee_moved_96_khz.flac -c:a libmp3lame -ar 48000 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_48000_khz.mp3
 
-        # https://github.com/Mercandj/audio-samples/issues/1
-        ffmpeg -i ./sample_bee_moved_96_khz.flac -c:a libmp3lame -ar 44100 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_44100_khz.mp3
+    ffmpeg -i ./build/sample_bee_moved_96_khz.wav -codec:a aac ./build/sample_bee_moved_aac.m4a
 
-        # https://github.com/Mercandj/audio-samples/issues/1
-        ffmpeg -i ./sample_bee_moved_96_khz.flac -c:a libmp3lame -ar 48000 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_48000_khz.mp3
-
-        ffmpeg -i ./build/sample_bee_moved_96_khz.wav -codec:a aac ./build/sample_bee_moved_aac.m4a
-
-        ffmpeg -i ./build/sample_bee_moved_96_khz.wav -acodec libvorbis ./build/sample_bee_moved_vorbis.ogg
-
-    popd
+    ffmpeg -i ./build/sample_bee_moved_96_khz.wav -acodec libvorbis ./build/sample_bee_moved_vorbis.ogg
 
     printf "\n\n\n"
-    printf "Checkout $BASEDIR/build/audio-samples/generated_content_description.json to find output file\n"
+    printf "Checkout $BASEDIR/generated_content_description.json to find output file\n"
 
 popd
