@@ -1,9 +1,15 @@
 {
   "json_format_version": 1,
   "files": {
-    "sample_bee_moved_48_khz.mp3": {
-      "file_name": "sample_bee_moved_48_khz.mp3",
-      "file_local_path": "./build/sample_bee_moved_48_khz.mp3",
+    "sample_bee_moved_44100_khz.mp3": {
+      "file_name": "sample_bee_moved_44100_khz.mp3",
+      "file_local_path": "./build/sample_bee_moved_44100_khz.mp3",
+      "format_extension": "mp3",
+      "display_name": "MP3 - Sample BeeMoved - 44,1kHz"
+    },
+    "sample_bee_moved_48000_khz.mp3": {
+      "file_name": "sample_bee_moved_48000_khz.mp3",
+      "file_local_path": "./build/sample_bee_moved_48000_khz.mp3",
       "format_extension": "mp3",
       "display_name": "MP3 - Sample BeeMoved - 48kHz"
     },
