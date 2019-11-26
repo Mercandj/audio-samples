@@ -2,25 +2,25 @@
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-pushd "$BASEDIR"
+pushd "$BASEDIR" || exit
 
     if [ -d "$BASEDIR/build/audio-samples" ]; then
         printf "Pull audio-samples GitHub project"
-        pushd "$BASEDIR/build/audio-samples"
+        pushd "$BASEDIR/build/audio-samples" || exit
             git pull
-        popd
+        popd || exit
     else
         printf "Clone audio-samples GitHub project"
         mkdir -p build
-        pushd build
+        pushd build || exit
             git clone https://github.com/Mercandj/audio-samples.git
-        popd
+        popd || exit
     fi
 
-    pushd ./build/audio-samples
+    pushd ./build/audio-samples || exit
 
         bash ./create_audio_samples.sh
 
-    popd
+    popd || exit
 
-popd
+popd || exit

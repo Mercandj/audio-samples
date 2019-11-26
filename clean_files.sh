@@ -2,18 +2,19 @@
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-pushd "$BASEDIR"
+pushd "$BASEDIR" || exit
 
-    pushd ./build
+    pushd ./build || exit
 
         rm *.aac
         rm *.mp3
         rm *.m4a
         rm *.ogg
         rm *.wav
+        rm *.wma
 
-    popd
+    popd || exit
 
     rm -f ./build
 
-popd
+popd || exit
