@@ -31,6 +31,8 @@ pushd "$BASEDIR" || exit
 
     ffmpeg -i ./build/sample_bee_moved_96_khz.wav -acodec libvorbis ./build/sample_bee_moved_vorbis.ogg
 
+    ffmpeg -i ./build/sample_bee_moved_96_khz.wav -acodec libopus ./build/sample_bee_moved.opus
+
     printf "\n\n\n"
     printf "Checkout $BASEDIR/generated_content_description.json to find output file\n"
 

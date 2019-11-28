@@ -49,6 +49,12 @@
       "format_extension": "ogg",
       "display_name": "OGG VORBIS - Sample BeeMoved"
     },
+    "sample_bee_moved.opus": {
+      "file_name": "sample_bee_moved.opus",
+      "file_local_path": "build/sample_bee_moved.opus",
+      "format_extension": "opus",
+      "display_name": "Opus - Sample BeeMoved"
+    },
     "sample_bee_moved_96_khz.flac": {
       "file_name": "sample_bee_moved_96_khz.flac",
       "file_local_path": "sample_bee_moved_96_khz.flac",

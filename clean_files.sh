@@ -10,6 +10,7 @@ pushd "$BASEDIR" || exit
         rm *.mp3
         rm *.m4a
         rm *.ogg
+        rm *.opus
         rm *.wav
         rm *.wma
 
