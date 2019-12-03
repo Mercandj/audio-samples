@@ -10,14 +10,19 @@ pushd "$BASEDIR" || exit
 
     mkdir ./build
 
+    # ####          WAV should be first           #### #
     # https://github.com/Mercandj/audio-samples/issues/2
     ffmpeg -i ./sample_bee_moved_96_khz.flac -acodec pcm_s16le ./build/sample_bee_moved_96_khz.wav
+
+    ffmpeg -i ./build/sample_bee_moved_96_khz.wav ./build/sample_bee_moved.aif
 
     # https://github.com/Mercandj/audio-samples/issues/1
     ffmpeg -i ./sample_bee_moved_96_khz.flac -c:a libmp3lame -ar 44100 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_44100_khz.mp3
 
     # https://github.com/Mercandj/audio-samples/issues/1
     ffmpeg -i ./sample_bee_moved_96_khz.flac -c:a libmp3lame -ar 48000 -ab 320k -map_metadata 0 -id3v2_version 3 ./build/sample_bee_moved_48000_khz.mp3
+
+    ffmpeg -i ./build/sample_bee_moved_96_khz.wav ./build/sample_bee_moved.mp4
 
     # https://superuser.com/questions/684955/converting-audio-to-aac-using-ffmpeg
     ffmpeg -i ./build/sample_bee_moved_96_khz.wav -codec:a aac ./build/sample_bee_moved_aac.m4a

@@ -7,10 +7,15 @@ pushd "$BASEDIR" || exit
     pushd ./build || exit
 
         rm *.aac
+        rm *.aif
+        rm *.aiff
+        rm *.ape
         rm *.mp3
+        rm *.mp4
         rm *.m4a
         rm *.ogg
         rm *.opus
+        rm *.ra
         rm *.wav
         rm *.wma
 
