@@ -1,6 +1,7 @@
 # Audio sample files
 
-The original "full resolution" flac file this coming from [Sony](https://helpguide.sony.net/high-res/sample1/v1/en/index.html).
+- The original "full resolution" flac file this coming from [Sony](https://helpguide.sony.net/high-res/sample1/v1/en/index.html).
+- Another library of samples [here](https://docs.espressif.com/projects/esp-adf/en/latest/design-guide/audio-samples.html)
 
 ## How to use it
 
