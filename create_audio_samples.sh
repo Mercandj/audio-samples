@@ -38,6 +38,11 @@ pushd "$BASEDIR" || exit
 
     ffmpeg -i ./build/sample_bee_moved_96_khz.wav -acodec libopus ./build/sample_bee_moved.opus
 
+    # ####               WAV sinus                #### #
+    ffmpeg -f lavfi -i "sine=frequency=500:duration=5" -ac 2 ./build/sine_500_hz.wav
+    ffmpeg -f lavfi -i "sine=frequency=1000:duration=5" -ac 2 ./build/sine_1000_hz.wav
+    ffmpeg -f lavfi -i "sine=frequency=1500:duration=5" -ac 2 ./build/sine_1500_hz.wav
+
     printf "\n\n\n"
     printf "Checkout $BASEDIR/generated_content_description.json to find output file\n"
 

@@ -72,6 +72,24 @@
       "file_local_path": "build/sample_bee_moved_44100_khz.wma",
       "format_extension": "wma",
       "display_name": "WMA - Sample BeeMoved - 44,1kHz"
+    },
+    "sine_500_hz.wav": {
+      "file_name": "sine_500_hz.wav",
+      "file_local_path": "build/sine_500_hz.wav",
+      "format_extension": "wav",
+      "display_name": "WAV - Sine - 500Hz"
+    },
+    "sine_1000_hz.wav": {
+      "file_name": "sine_1000_hz.wav",
+      "file_local_path": "build/sine_1000_hz.wav",
+      "format_extension": "wav",
+      "display_name": "WAV - Sine - 1000Hz"
+    },
+    "sine_1500_hz.wav": {
+      "file_name": "sine_1500_hz.wav",
+      "file_local_path": "build/sine_1500_hz.wav",
+      "format_extension": "wav",
+      "display_name": "WAV - Sine - 1500Hz"
     }
   }
 }
